@@ -30,7 +30,7 @@ layout: default_bootstrap
   {% endif %}
 
     {{ content }}
-<a href="https://facebook.com/sharer.php?u={{ site.url }}{{ page.url }}" rel="nofollow" target="_blank" title="Share on Facebook">Facebook</a>
+{% include fb-share.html %}
   </div></div>
 
   {% if site.disqus.shortname %}
