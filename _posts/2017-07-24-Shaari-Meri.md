@@ -7,7 +7,7 @@ youtubeId: e0HvkIHpZvk
 ---
 
 
-![test](https://superdevresources.com/wp-content/uploads/2017/07/bot-directories.png)
+test
 
 
   
