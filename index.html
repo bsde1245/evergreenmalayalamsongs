@@ -1,6 +1,55 @@
 ---
-# You don't need to edit this file, it's empty on purpose.
-# Edit theme's home layout instead if you wanna make some changes
-# See: https://jekyllrb.com/docs/themes/#overriding-theme-defaults
-layout: home
+layout: default
 ---
+
+<div class="home">
+
+  
+<div class="container">
+    <div class="row">
+  
+
+      
+        {% for post in paginator.posts %}
+        
+          <div class="card  shadow-nohover" style="width: 58rem;">
+
+              <h5 class="card-title text-center"><a class="text-black" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h5>
+
+                 
+
+                   
+                   {{ post.content }}
+                   
+                 
+
+           </div>
+          
+            {% endfor %}
+          
+        
+     </div></div>
+<br>
+<nav aria-label="Page navigation">
+{% if paginator.total_pages > 1 %}
+  <ul class="pagination">
+{% if paginator.previous_page %}
+    <li class="page-item">
+      <a class="page-link" href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}" tabindex="-1">&laquo; Previous</a>
+    </li>
+{% else %}
+<li class="page-item disabled">
+      <a class="page-link" href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}" tabindex="-1">&laquo; Previous</a>
+    </li>
+{% endif %}
+
+   {% if paginator.next_page %}
+    <li class="page-item"><a class="page-link" href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Next &raquo;</a></li>
+  {% else %}
+    <li class="page-item disabled"><a class="page-link" href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Next &raquo;</a></li>
+  {% endif %}
+  </ul>
+{% endif %}
+</nav> 
+     
+    </div>
