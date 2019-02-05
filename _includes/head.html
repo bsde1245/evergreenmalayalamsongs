@@ -21,8 +21,9 @@
 	<script type="text/javascript">
 		var id;
           function getyoutubetitle(id) {
-            var json = 'http://www.youtube.com/oembed?url=http%3A//youtube.com/watch%3Fv%3D' + id + '&format=json';
-            document.write(json[title]);
+            var jsone = 'http://www.youtube.com/oembed?url=http%3A//youtube.com/watch%3Fv%3D' + id + '&format=json';
+		  var obj = JSON.parse(jsone);
+            document.write(obj[title]);
           }
 		  
       </script>
