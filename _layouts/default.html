@@ -4,7 +4,17 @@
   {% include head.html %}
 
   <body>
-
+<script>
+	function getyoutubetitle(videoID) {
+	$.getJSON('https://www.googleapis.com/youtube/v3/videos?id='+videoID+'&key=AIzaSyDfqskjJZXVzNMKVs1c7dXvlDC2rpjrB60&part=snippet&callback=?',function(data){
+	if (typeof(data.items[0]) != "undefined") {
+	document.write(data.items[0].snippet.title);
+	} else {
+	console.log('video not exists');
+	}
+	});
+	}
+</script>
     {% include header.html %}
     <br><br><br>
     
