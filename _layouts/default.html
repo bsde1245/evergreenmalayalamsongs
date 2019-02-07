@@ -7,16 +7,7 @@
 
     {% include header.html %}
     <br><br><br>
-    
-      <div class="page-content">
-        <div class="wrapper">
-          {{ content }}
-        </div>
-      </div>
-    
-<br>
-    {% include footer.html %}
-	  <script>
+    <script>
 	function getyoutubetitle(videoID) {
 	$.getJSON('https://www.googleapis.com/youtube/v3/videos?id='+videoID+'&key=AIzaSyDfqskjJZXVzNMKVs1c7dXvlDC2rpjrB60&part=snippet&callback=?',function(data){
 	if (typeof(data.items[0]) != "undefined") {
@@ -27,6 +18,15 @@
 	});
 	}
 </script>
+      <div class="page-content">
+        <div class="wrapper">
+          {{ content }}
+        </div>
+      </div>
+    
+<br>
+    {% include footer.html %}
+	  
 
   </body>
 
