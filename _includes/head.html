@@ -19,15 +19,16 @@
 
 <script src="{{'/bs/assets/javascripts/ekko-lightbox.js' | prepend: site.baseurl}}"></script>
 	<script type="text/javascript">
-	function getyoutubetitle(videoID) {
-	$.getJSON('https://www.googleapis.com/youtube/v3/videos?id='+videoID+'&key=AIzaSyDfqskjJZXVzNMKVs1c7dXvlDC2rpjrB60&part=snippet&callback=?',function(data){
-	if (typeof(data.items[0]) != "undefined") {
-	document.write(data.items[0].snippet.title);
-	} else {
-	console.log('video not exists');
-	}
-	});
-	}
-     </script>
+    function getyoutubetitle(nodeID, videoID) {
+        let node = '#' + nodeID;
+        $.getJSON('https://www.googleapis.com/youtube/v3/videos?id='+videoID+'&key=AIzaSyDfqskjJZXVzNMKVs1c7dXvlDC2rpjrB60&part=snippet&callback=?',function(data){
+            if (typeof(data.items[0]) != 'undefined') {
+                $(node).text(data.items[0].snippet.title);
+            } else {
+                console.log('video not exists');
+            }
+        });
+    }
+</script>
 
 </head>
