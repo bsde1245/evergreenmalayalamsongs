@@ -21,8 +21,8 @@
 	<script type="text/javascript">
     function getyoutubetitle(nodeID, videoID) {
         let node = '#' + nodeID;
-        $.getJSON('https://www.googleapis.com/youtube/v3/videos?id='+videoID+'&key=AIzaSyDfqskjJZXVzNMKVs1c7dXvlDC2rpjrB60&part=snippet&callback=?',function(data){
-            if (typeof(data.items[0]) != 'undefined') {
+        $.getJSON('https://www.googleapis.com/youtube/v3/videos?id='+videoID+'&key=AIzaSyDfqskjJZVzNMKVs1c7dXvlDC2rpjrB60&part=snippet&callback=?',function(data){
+            if (data && data.items && data.items[0]) {
                 $(node).text(data.items[0].snippet.title);
             } else {
                 console.log('video not exists');
