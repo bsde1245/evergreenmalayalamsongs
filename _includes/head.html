@@ -21,11 +21,13 @@
 	<script type="text/javascript">
     function getyoutubetitle(nodeID, videoID) {
         let node = '#' + nodeID;
-        $.getJSON('https://www.googleapis.com/youtube/v3/videos?id='+videoID+'&key=AIzaSyDfqskjJZXVzNMKVs1c7dXvlDC2rpjrB60&part=snippet&callback=?',function(data){
+        let apiKey = 'AIzaSyDfqskjJZXVzNMKVs1c7dXvlDC2rpjrB60';
+        let url = 'https://www.googleapis.com/youtube/v3/videos?id=' + videoID + '&part=snippet&key=' + apiKey;
+        $.getJSON(url, function(data){
             if (data && data.items && data.items[0]) {
                 $(node).text(data.items[0].snippet.title);
             } else {
-                console.log('video not exists');
+              	console.log('video not exists');
             }
         });
     }
