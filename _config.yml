@@ -7,11 +7,11 @@
 
 # Site settings
 title: Malayalam Songs
-email: contact@justinechacko.in
+email: contact@monsoonmalabar.com
 description: > # this means to ignore newlines until "baseurl:"
   Malayalam evergreen songs
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://songs.justinechacko.in" # the base hostname & protocol for your site
+url: "https://songs.monsoonmalabar.com" # the base hostname & protocol for your site
 twitter_username: 
 github_username:  
 
